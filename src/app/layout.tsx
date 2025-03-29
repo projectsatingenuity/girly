@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Footer from "@/component/footer";
 import Header from "@/component/header";
+import MobileHeader from "@/component/mobile-header";
 import { CalculatorProvider } from "@/context/CalculatorContext";
 
 const geistSans = Geist({
@@ -38,8 +39,9 @@ export default function RootLayout({
         className={`${playfair.variable} ${geistSans.variable} ${geistMono.variable} antialiased font-sans min-h-screen w-full bg-pink-50 flex flex-col`}
       >
         <CalculatorProvider>
+          <MobileHeader />
           <Header />
-          <main className="flex-grow">
+          <main className="flex-grow pt-16 md:pt-0">
             {children}
           </main>
           <Footer />
