@@ -1,15 +1,19 @@
 "use client"
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 type CalculatorContextType = {
   showCalculator: boolean;
   setShowCalculator: (show: boolean) => void;
+  pageTitle: string;
+  setPageTitle: (title: string) => void;
 };
 
 const CalculatorContext = createContext<CalculatorContextType>({
   showCalculator: false,
   setShowCalculator: () => {},
+  pageTitle: 'woomanly.blog',
+  setPageTitle: () => {},
 });
 
 export const useCalculator = () => {
@@ -26,9 +30,14 @@ type CalculatorProviderProps = {
 
 export function CalculatorProvider({ children }: CalculatorProviderProps) {
   const [showCalculator, setShowCalculator] = useState(false);
+  const [pageTitle, setPageTitle] = useState('woomanly.blog');
+
+  useEffect(() => {
+    document.title = pageTitle;
+  }, [pageTitle]);
 
   return (
-    <CalculatorContext.Provider value={{ showCalculator, setShowCalculator }}>
+    <CalculatorContext.Provider value={{ showCalculator, setShowCalculator, pageTitle, setPageTitle }}>
       {children}
     </CalculatorContext.Provider>
   );

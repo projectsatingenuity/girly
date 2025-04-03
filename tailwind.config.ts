@@ -1,7 +1,7 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: "class", // ✅ Fixed
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -62,16 +62,20 @@ const config: Config = {
           ring: "hsl(var(--sidebar-ring))",
         },
         pink: {
-          50: "#fff0f6",
-          100: "#ffe3ee",
+          50: "#fff5fa",
+          100: "#ffe6f4",
           200: "#ffc6dd",
           300: "#ff99c0",
-          400: "#ff6699",
-          500: "#ff3377",
-          600: "#f01d58",
+          400: "#f687b3",
+          500: "#ec4899",
+          600: "#db2777",
           700: "#d10a45",
           800: "#ab0c3c",
           900: "#8c0f38",
+        },
+        purple: {
+          400: "#a78bfa",
+          500: "#8b5cf6",
         },
       },
       borderRadius: {
@@ -81,20 +85,12 @@ const config: Config = {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
@@ -104,6 +100,6 @@ const config: Config = {
     },
   },
   plugins: [],
-}
-export default config
+};
 
+export default config;

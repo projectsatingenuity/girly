@@ -6,7 +6,7 @@ export default function Footer(){
         <p className="text-gray-700 text-sm md:text-base">
           copyright 2025{" "}
           <Link href="/" className="text-pink-500">
-            girly.com
+          woomanly.blog
           </Link>{" "}
           All rights reserved.
         </p>

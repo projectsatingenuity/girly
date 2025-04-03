@@ -30,7 +30,7 @@ export default function MobileHeader() {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Image
-              src="/logo.png"
+              src="/logo3.png"
               alt="Girl illustration"
               width={120}
               height={58}
@@ -43,6 +43,7 @@ export default function MobileHeader() {
             onClick={toggleMenu}
             className="p-3 rounded-full bg-white/80 shadow-lg text-gray-700 hover:text-gray-900 focus:outline-none"
             aria-label="Toggle menu"
+            suppressHydrationWarning={true}
           >
             {isMenuOpen ? (
               <X className="w-6 h-6" />
@@ -78,25 +79,35 @@ export default function MobileHeader() {
                     Home
                   </Link>
                   <Link
-                    href="/about"
+                    href="/About-us"
                     className="text-gray-900 font-medium hover:text-purple-500 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     About Us
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/Contact-us"
                     className="text-gray-900 font-medium hover:text-purple-500 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Contact Us
                   </Link>
-                  <button
-                    onClick={handleCalculatorClick}
-                    className="bg-purple-500 text-white px-6 py-2 rounded-full font-medium hover:bg-purple-600 transition-colors w-full text-center mt-2"
+                  <Link
+                    href="/Blogs#blog-list"
+                    className="text-gray-900 font-medium hover:text-purple-500 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    Calculator
-                  </button>
+                    Blogs
+                  </Link>
+                  <Link href="/Calculate">
+                    <button
+                      onClick={handleCalculatorClick}
+                      className="bg-purple-500 text-white px-6 py-2 rounded-full font-medium hover:bg-purple-600 transition-colors w-full text-center mt-2"
+                      suppressHydrationWarning
+                    >
+                      Calculator
+                    </button>
+                  </Link>
                 </div>
               </motion.nav>
             </>
